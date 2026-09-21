@@ -8,11 +8,12 @@
     "build": "tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview",
-    "start": "serve -s dist -l 8080"
+    "start": "node server.js"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",
     "clsx": "^2.1.1",
+    "express": "^5.2.1",
     "lucide-react": "^1.47.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
@@ -22,6 +23,7 @@
     "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
+    "@types/express": "^5.0.6",
     "@types/node": "^24.13.3",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.7",
