@@ -8,14 +8,14 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const PORT = process.env.PORT || 8080;
 
-// Serve static assets from dist folder with cache headers
+// Serve static assets from dist folder
 app.use(express.static(path.join(__dirname, 'dist')));
 
-// SPA fallback - return index.html for any frontend route
-app.get('*', (req, res) => {
+// SPA fallback for all remaining requests (Express 5 compatible)
+app.use((req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
 app.listen(PORT, '0.0.0.0', () => {
-  console.log(`EduTech Hub server listening on port ${PORT}`);
+  console.log(`EduTech Hub server is running on port ${PORT}`);
 });
